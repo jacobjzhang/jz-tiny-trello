@@ -1,0 +1,32 @@
+<div id='detail-view'>
+  <div {{action 'toggleModal'}} class='modal-fog'></div>
+  <div class='panel panel-info modal-frame'>
+
+    <div class='panel-heading modal-title'>
+      <div class='pull-left'>
+        {{selectedItem.name}}
+      </div>
+      <div class='pull-right'>
+        <span {{action 'deleteItem' selectedItem}} class='button'>Delete</span>
+        <span {{action 'toggleModal' selectedItem}} class='button'>Close</span>
+      </div>
+    </div>
+
+    <div class='panel-body modal-body'>
+    	{{#if editState}}
+  			<form {{action 'editItemDescription' newDesc selectedItem.id on='submit'}} 
+          id='newDesc'>
+					{{input
+            class='form-control'
+            value=newDesc
+            placeholder='Please enter item description here.'}}
+				</form>
+        
+    	{{else}}
+      	<span {{action 'toggleEditState'}}>{{selectedItem.description}}</span>
+    	{{/if}}
+
+    </div>
+  </div>
+
+</div>

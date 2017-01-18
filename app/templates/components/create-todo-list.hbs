@@ -1,0 +1,19 @@
+<div class="col-md-4">
+	<div class="panel panel-primary">
+		<div class="panel-heading">New List</div>
+		<div class="panel-body">
+			<form id="newList">
+				<p>
+					{{input value=newList.name placeholder="Enter new list name" class='form-control'}}
+				</p>
+				<p>
+					<button 
+						{{action "createList" newList}}
+						listId={{listId}}
+						class='btn btn-primary'>Create List</button>
+				</p>
+			</form>
+		</div>
+
+	</div>
+</div>

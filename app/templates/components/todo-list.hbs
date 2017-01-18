@@ -1,0 +1,17 @@
+<div class='col-md-4'>
+	<div id='list-{{list.id}}' class='panel panel-primary'>
+		<div class='panel-heading' {{action 'deleteList' list}}>{{list.name}}</div>
+		<div class='panel-body'>
+			<div class='list-group'>
+
+				{{#each list.items as |item index|}}
+					{{todo-item item=item selectItem='selectItem'}}
+				{{/each}}
+
+			</div>
+
+			{{create-item newItem=list.items createItem='createItem' listId=list.id}}
+
+		</div>
+	</div>
+</div>

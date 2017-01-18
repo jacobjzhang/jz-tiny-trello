@@ -1,0 +1,12 @@
+<p class='form-group'>
+	{{#if inputMode}}
+		<form {{action 'createItem' newItem listId on='submit'}} id='newItem'>
+			{{input value=newItem.name placeholder='Item Name' class='form-control'}}
+		</form>
+
+	{{else}}
+		<button {{action 'isEditing'}} class='btn btn-primary'>
+			Add item to list {{listId}}
+		</button>
+	{{/if}}
+</p>

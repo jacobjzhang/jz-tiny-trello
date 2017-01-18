@@ -1,0 +1,21 @@
+<ul>
+	{{#each model as |list|}}
+		{{todo-list 
+			list=list 
+			modalEnabled=modalEnabled 
+			selectItem='selectItem'
+			createItem='createItem'}}
+	{{/each}}
+
+	{{create-todo-list newList=model createList='createList'}}
+
+</ul>
+
+{{#if modalEnabled}}
+
+	{{detail-view 
+		selectedItem=selectedItem
+		toggleModal='toggleModal'
+		deleteItem='deleteItem'}}
+
+{{/if}}
