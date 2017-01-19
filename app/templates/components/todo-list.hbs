@@ -1,6 +1,11 @@
 <div class='col-md-4'>
-	<div id='list-{{list.id}}' class='panel panel-primary'>
-		<div class='panel-heading' {{action 'deleteList' list}}>{{list.name}}</div>
+	<div id='list-{{list.id}}' class='todo-list panel panel-primary'>
+		<div class='panel-heading'>
+			{{list.name}}
+			<div class='pull-right delete' {{action 'deleteList' list}}>
+				<span class='glyphicon glyphicon-remove' aria-hidden="true"></span>
+			</div>
+		</div>
 		<div class='panel-body'>
 			<div class='list-group'>
 

@@ -5,10 +5,10 @@ export default Ember.Component.extend({
   newItem: '',
 	actions: {
 		isEditing() {
-			this.set('inputMode', true);
+			this.toggleProperty('inputMode');
 		},
   	createItem: function(newItem, listId) {
-  		this.set('inputMode', false);
+      this.toggleProperty('inputMode');
       this.sendAction('createItem', newItem, listId);
     }
   }

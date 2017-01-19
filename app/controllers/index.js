@@ -8,18 +8,21 @@ export default Ember.Controller.extend({
       this.toggleProperty('modalEnabled');
     },
     createItem(newItem, listId) {
-      let thisNewItem = this.store.createRecord('item', {
-        name: newItem.name,
-        description: 'Click here to enter a description'
-      });
-
-      let listToAssociate = this.store.findRecord('list', listId);
-      listToAssociate.then(function(list) {
-        list.get('items').then(function(items) {
-          items.pushObject(thisNewItem);
-          items.save();
+      if (newItem.name) {
+        let thisNewItem = this.store.createRecord('item', {
+          name: newItem.name,
+          description: 'Click here to enter a description'
         });
-      });
+
+        let listToAssociate = this.store.findRecord('list', listId);
+        listToAssociate.then(function(list) {
+          list.get('items').then(function(items) {
+            items.pushObject(thisNewItem);
+            items.save();
+          });
+        });
+
+      }
 
     },
     selectItem(item) {

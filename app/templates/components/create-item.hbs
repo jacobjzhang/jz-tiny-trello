@@ -1,8 +1,13 @@
 <p class='form-group'>
 	{{#if inputMode}}
-		<form {{action 'createItem' newItem listId on='submit'}} id='newItem'>
-			{{input value=newItem.name placeholder='Item Name' class='form-control'}}
-		</form>
+		<div class='input-group'>
+			<form {{action 'createItem' newItem listId on='submit'}} id='newItem'>
+				{{input value=newItem.name placeholder='Item Name' class='form-control'}}
+			</form>
+			<span {{action 'isEditing'}} class='input-group-addon'>
+				<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
+			</span>
+		</div>
 
 	{{else}}
 		<button {{action 'isEditing'}} class='btn btn-primary'>

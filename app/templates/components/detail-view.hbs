@@ -13,6 +13,10 @@
     </div>
 
     <div class='panel-body modal-body'>
+      <p>
+        <i>Click the below text to edit description:</i>
+      </p>
+
     	{{#if editState}}
   			<form {{action 'editItemDescription' newDesc selectedItem.id on='submit'}} 
           id='newDesc'>

@@ -1,3 +1,15 @@
+.input-error {
+  border: 3px solid red;
+}
+
+.todo-list .delete span {
+  cursor: pointer;
+}
+
+.todo-list .delete span:hover {
+  color: #000;
+}
+
 #detail-view {
   position: fixed;
   top: 0;
@@ -42,4 +54,8 @@
 
 .modal-body {
   margin-top: 40px;
+}
+
+.modal-body {
+  cursor: pointer;
 }
