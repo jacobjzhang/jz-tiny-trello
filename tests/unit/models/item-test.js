@@ -1,15 +1,12 @@
 import { moduleForModel, test } from 'ember-qunit';
-import Ember from 'ember';
 
 moduleForModel('item', 'Unit | Model | item', {
-  // Specify the other units that are required for this test.
-  needs: []
+  needs: ['model:list']
 });
 
 
-test('it exists', function(assert) {
-	Ember.run(function(){
-	  let store = this.store();
-	  assert.ok(store.find('item', 1), "record exists");
-  });
+test('item has name attribute', function(assert) {
+  var model = this.subject();
+  var hasAttr = Object.keys(model.toJSON()).indexOf('name') > -1;
+  assert.ok(hasAttr);
 });

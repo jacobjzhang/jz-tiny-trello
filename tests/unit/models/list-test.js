@@ -1,12 +1,14 @@
 import { moduleForModel, test } from 'ember-qunit';
+import Ember from 'ember';
 
 moduleForModel('list', 'Unit | Model | list', {
-  // Specify the other units that are required for this test.
-  needs: []
+  needs: ['model:item']
 });
 
-test('it exists', function(assert) {
-  let model = this.subject();
-  // let store = this.store();
-  assert.ok(!!model);
+test('list has items relationship', function(assert) {
+  const List = this.store().modelFor('list');
+  const relationship = Ember.get(List, 'relationshipsByName').get('items');
+
+  assert.equal(relationship.key, 'items', 'has relationship with list');
+  assert.equal(relationship.kind, 'hasMany', 'kind of relationship is belongsTo');
 });

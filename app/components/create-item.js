@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 	inputMode: false,
-  newItem: '',
+  newItem: {},
 	actions: {
 		isEditing() {
 			this.toggleProperty('inputMode');

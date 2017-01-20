@@ -7,9 +7,6 @@ moduleForComponent('detail-view', 'Integration | Component | detail view', {
 
 test('it renders', function(assert) {
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
   this.render(hbs`{{detail-view}}`);
 
   assert.equal(this.$('.pull-right span.button:first').text().trim(), 'Delete');
@@ -25,5 +22,6 @@ test('it renders', function(assert) {
     {{detail-view selectedItem=item}}
   `);
 
-  assert.equal(this.$('.panel-body').text().trim(), 'testitem');
+  var woInstruct = this.$('.panel-body').text().replace('Click the below text to edit description:','').trim();
+  assert.equal(woInstruct, 'testitem');
 });

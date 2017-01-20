@@ -8,9 +8,6 @@ moduleForComponent('create-todo-list', 'Integration | Component | create todo li
 
 test('it renders', function(assert) {
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
   this.render(hbs`{{create-todo-list}}`);
 
   assert.equal(this.$('.panel-heading').text().trim(), 'New List');

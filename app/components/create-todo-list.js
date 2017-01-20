@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import $ from 'jquery';
 const { inject } = Ember;
 
 export default Ember.Component.extend({
@@ -10,11 +11,13 @@ export default Ember.Component.extend({
 	      	name: newList.name
 	      });
 	      list.save();
+
    		} else {
    			$('#newList input').addClass('input-error');
    			setTimeout(function() {
    				$('#newList input').removeClass('input-error');
    			}, 200);
+
    		}
     }
   }
