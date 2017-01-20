@@ -18,6 +18,10 @@
   right: 0;
 }
 
+#detail-view .name-change {
+  height: 20px;
+}
+
 .modal-fog {
   background: rgba(30, 30, 30, 0.5);
   position: absolute;

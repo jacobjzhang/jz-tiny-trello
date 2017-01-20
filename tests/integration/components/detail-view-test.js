@@ -22,6 +22,9 @@ test('it renders', function(assert) {
     {{detail-view selectedItem=item}}
   `);
 
-  var woInstruct = this.$('.panel-body').text().replace('Click the below text to edit description:','').trim();
+  var woInstruct = this.$('.panel-body')
+                       .text()
+                       .replace('Click the name above or description below to edit.','')
+                       .trim();
   assert.equal(woInstruct, 'testitem');
 });

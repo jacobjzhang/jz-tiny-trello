@@ -1,10 +1,10 @@
-import { Factory, faker } from 'ember-cli-mirage';
+import { Factory } from 'ember-cli-mirage';
 
 export default Factory.extend({
 	name() {
-		return faker.commerce.department();
+		return 'Default List';
 	},
 	afterCreate(list, server) {
-		server.createList('item', 4, {list});
+		server.createList('item', 3, {list});
 	}
 });

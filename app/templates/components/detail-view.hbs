@@ -4,7 +4,17 @@
 
     <div class='panel-heading modal-title'>
       <div class='pull-left'>
-        {{selectedItem.name}}
+        {{#if editingName}}
+          <form {{action 'editItemName' newItem selectedItem.id on='submit'}} 
+            id='newTitle'>
+            {{input
+              class='name-change form-control'
+              value=newItem.name
+              placeholder='Item name'}}
+            </form>
+        {{else}}
+          <span {{action 'toggleEditState' 'name'}}>{{selectedItem.name}}</span>
+        {{/if}}
       </div>
       <div class='pull-right'>
         <span {{action 'deleteItem' selectedItem}} class='button'>Delete</span>
@@ -14,20 +24,20 @@
 
     <div class='panel-body modal-body'>
       <p>
-        <i>Click the below text to edit description:</i>
+        <i>Click the name above or description below to edit.</i>
       </p>
 
-    	{{#if editState}}
-  			<form {{action 'editItemDescription' newDesc selectedItem.id on='submit'}} 
+    	{{#if editingDesc}}
+  			<form {{action 'editItemDescription' newItem selectedItem.id on='submit'}} 
           id='newDesc'>
 					{{input
             class='form-control'
-            value=newDesc
+            value=newItem.description
             placeholder='Please enter item description here.'}}
 				</form>
         
     	{{else}}
-      	<span {{action 'toggleEditState'}}>{{selectedItem.description}}</span>
+      	<span {{action 'toggleEditState' 'description'}}>{{selectedItem.description}}</span>
     	{{/if}}
 
     </div>

@@ -1,4 +1,4 @@
 export default function( server ) {
-  server.createList('list', 2);
+  server.createList('list', 1);
 
 }
