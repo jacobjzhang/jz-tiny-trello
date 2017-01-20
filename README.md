@@ -1,7 +1,6 @@
 # Jacob's Tiny-Trello App
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is my Tiny-Trello project. I hope you enjoy it. I primarily used Ember components and tried to decouple functionality as much as possible. I hope you find my code clean and understandable. Please be sure to try running tests with 'ember test'. Cheers and thank you for the opportunity!
 
 ## Prerequisites
 
