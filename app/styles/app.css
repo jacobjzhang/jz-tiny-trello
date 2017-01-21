@@ -26,6 +26,10 @@
   height: 20px;
 }
 
+.todo-list {
+  min-height: 270px;
+}
+
 .modal-fog {
   background: rgba(30, 30, 30, 0.5);
   position: absolute;
