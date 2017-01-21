@@ -2,7 +2,8 @@
 	{{#each model as |list|}}
 		{{todo-list 
 			list=list 
-			modalEnabled=modalEnabled 
+			modalEnabled=modalEnabled
+			newItem=newItem 
 			selectItem='selectItem'
 			createItem='createItem'}}
 	{{/each}}
@@ -15,6 +16,7 @@
 
 	{{detail-view 
 		selectedItem=selectedItem
+		newItem=newItem 
 		toggleModal='toggleModal'
 		deleteItem='deleteItem'}}
 

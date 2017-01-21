@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   modalEnabled: false,
+  newItem: {},
   selectedItem: {},
   actions: {
     toggleModal() {
@@ -11,7 +12,7 @@ export default Ember.Controller.extend({
       if (newItem.name) {
         let thisNewItem = this.store.createRecord('item', {
           name: newItem.name,
-          description: 'Click here to enter a description'
+          description: 'Click here to enter a description.'
         });
 
         let listToAssociate = this.store.findRecord('list', listId);

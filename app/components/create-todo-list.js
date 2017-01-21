@@ -7,10 +7,12 @@ export default Ember.Component.extend({
 	actions: {
    	createList(newList) {
    		if (newList.name) {
+        let self = this;
 	      let list = this.get('store').createRecord('list', {
 	      	name: newList.name
 	      });
-	      list.save();
+
+        list.save();
 
    		} else {
    			$('#newList input').addClass('input-error');

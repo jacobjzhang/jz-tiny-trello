@@ -5,7 +5,6 @@ export default Ember.Component.extend({
   store: inject.service(),
   editingName: false,
   editingDesc: false,
-  newItem: {},
   actions: {
   	toggleModal() {
   		this.sendAction('toggleModal');
@@ -22,12 +21,13 @@ export default Ember.Component.extend({
         this.toggleProperty('editingName');
         let itemToEdit = this.get('store').findRecord('item', id);      
 
+        let self = this;
         itemToEdit.then(function(item) {
           item.set('name', newItem.name);
           item.save();
+          self.set('newItem', {});
         });
 
-        this.set('newItem', {});
       }
 
     },
@@ -36,12 +36,13 @@ export default Ember.Component.extend({
         this.toggleProperty('editingDesc');
         let itemToEdit = this.get('store').findRecord('item', id);      
 
+        let self = this;
         itemToEdit.then(function(item) {
           item.set('description', newItem.description);
           item.save();
+          self.set('newItem', {});
         });
 
-        this.set('newItem', {});
       }
     },
     deleteItem(item) {
